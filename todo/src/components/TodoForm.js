@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 
 const TodoForm = props => {
-    console.log('from inside todoform', props);
 
     const [newTodo, setNewTodo] = useState();
 
@@ -15,7 +14,7 @@ const TodoForm = props => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input name='new-todo' type='text' value={newTodo} onChange={handleChanges} />
+            <input name='item' type='text' value={newTodo} onChange={handleChanges} />
             <button>Add Todo</button>
         </form>
     )
