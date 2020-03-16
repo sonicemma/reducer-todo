@@ -1,19 +1,14 @@
-import React, {useState, useReducer} from 'react';
-import {todoReducer, initialState} from '../reducer/todoReducer';
+import React from 'react';
 
-const Todo = () => {
-    const [state, dispatch] = useReducer(todoReducer, initialState);
-    console.log(state);
-    const [newTodo, setNewTodo] = useState('');
-
-    const handleChanges = e => {
-        setNewTodo(e.target.value);
-    }
-
+const Todo = props => {
     return (
-        <h1>From inside Todo</h1>
-    )
-
+        <div
+            onClick={() => props.toggleCompleted(props.item.id)}
+            className={`item${props.item.completed ? ' completed' : ''}`}
+        >
+            <p>{props.item.task}</p>
+        </div>
+    );
 };
 
 export default Todo;

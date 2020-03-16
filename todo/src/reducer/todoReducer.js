@@ -1,9 +1,10 @@
-export const initialState = 
-{
-    item: 'Make this app',
-    completed: false,
-    id: 3892987589
-  }
+export const initialState = [
+    {
+        item: 'Make this app',
+        completed: false,
+        id: Date.now()
+    }
+]
 
 
 export const todoReducer = (state, action) => {
